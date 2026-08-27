@@ -1,0 +1,860 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Portal ｜ Top 20 AI Tools</title>
+    <H1>Website on DrDeltaChen@gmail.com Github</H1>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans TC", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    background: linear-gradient(135deg, #111827, #273449);
+    color: white;
+    padding: 45px 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 12px 0 0;
+    font-size: 17px;
+    opacity: 0.85;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-area {
+    max-width: 800px;
+    margin: -25px auto 30px;
+    padding: 0 20px;
+    position: relative;
+}
+
+#searchBox {
+    width: 100%;
+    padding: 18px 22px;
+    border-radius: 15px;
+    border: none;
+    background: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    font-size: 17px;
+    outline: none;
+}
+
+/* =========================================================
+   CATEGORY BUTTONS
+   ========================================================= */
+
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px 30px;
+}
+
+.categories button {
+    border: none;
+    background: white;
+    padding: 10px 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.categories button:hover {
+    background: #e8eefc;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 20px 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* =========================================================
+   AI CARD
+   ========================================================= */
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.number {
+    font-size: 13px;
+    color: #7b8494;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.card h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #667085;
+    line-height: 1.6;
+    margin: 5px 0 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eef2ff;
+    color: #4654a3;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.card a {
+    margin-top: auto;
+    text-decoration: none;
+    text-align: center;
+    background: #172033;
+    color: white;
+    padding: 11px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.card a:hover {
+    background: #3b4a68;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #111827;
+    color: white;
+    font-size: 13px;
+}
+
+footer strong {
+    color: white;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>🤖 AI PORTAL</h1>
+
+    <p>
+        Top 20 Popular AI Tools
+    </p>
+
+    <div class="subtitle">
+        Chat • Research • Coding • Images • Video • Voice • Music • Productivity
+    </div>
+
+</header>
+
+
+<div class="search-area">
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔎 Search AI tools..."
+        onkeyup="searchAI()"
+    >
+
+</div>
+
+
+<div class="categories">
+
+    <button onclick="filterAI('all')">All</button>
+    <button onclick="filterAI('chat')">💬 Chat</button>
+    <button onclick="filterAI('research')">🔎 Research</button>
+    <button onclick="filterAI('coding')">💻 Coding</button>
+    <button onclick="filterAI('image')">🎨 Image</button>
+    <button onclick="filterAI('video')">🎬 Video</button>
+    <button onclick="filterAI('voice')">🎙 Voice</button>
+    <button onclick="filterAI('music')">🎵 Music</button>
+    <button onclick="filterAI('productivity')">📊 Productivity</button>
+
+</div>
+
+
+<main class="container">
+
+<div class="grid" id="aiGrid">
+
+
+<!-- =====================================================
+     01
+===================================================== -->
+
+<div class="card" data-category="chat" data-name="ChatGPT">
+
+    <div class="number">01</div>
+
+    <div class="icon">🤖</div>
+
+    <h2>ChatGPT</h2>
+
+    <span class="tag">General AI</span>
+
+    <p>
+        General-purpose AI for writing, reasoning,
+        studying, coding, analysis and creative work.
+    </p>
+
+    <a href="https://chatgpt.com/" target="_blank">
+        Open ChatGPT →
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     02
+===================================================== -->
+
+<div class="card" data-category="chat coding" data-name="Claude">
+
+    <div class="number">02</div>
+
+    <div class="icon">🧠</div>
+
+    <h2>Claude</h2>
+
+    <span class="tag">Writing • Coding</span>
+
+    <p>
+        Strong AI assistant for long documents,
+        reasoning, writing and software development.
+    </p>
+
+    <a href="https://claude.ai/" target="_blank">
+        Open Claude →
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     03
+===================================================== -->
+
+<div class="card" data-category="chat research" data-name="Gemini">
+
+    <div class="number">03</div>
+
+    <div class="icon">✨</div>
+
+    <h2>Google Gemini</h2>
+
+    <span class="tag">Google AI</span>
+
+    <p>
+        Google's AI assistant with strong integration
+        with the Google ecosystem.
+    </p>
+
+    <a href="https://gemini.google.com/" target="_blank">
+        Open Gemini →
+    </a>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="card" data-category="productivity chat" data-name="Microsoft Copilot">
+
+    <div class="number">04</div>
+
+    <div class="icon">🪟</div>
+
+    <h2>Microsoft Copilot</h2>
+
+    <span class="tag">Microsoft 365</span>
+
+    <p>
+        AI assistant for Microsoft productivity,
+        documents, spreadsheets and presentations.
+    </p>
+
+    <a href="https://copilot.microsoft.com/" target="_blank">
+        Open Copilot →
+    </a>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="card" data-category="research" data-name="Perplexity">
+
+    <div class="number">05</div>
+
+    <div class="icon">🔎</div>
+
+    <h2>Perplexity</h2>
+
+    <span class="tag">AI Search</span>
+
+    <p>
+        AI-powered research and search with
+        source-oriented answers.
+    </p>
+
+    <a href="https://www.perplexity.ai/" target="_blank">
+        Open Perplexity →
+    </a>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="card" data-category="chat research" data-name="Grok">
+
+    <div class="number">06</div>
+
+    <div class="icon">⚡</div>
+
+    <h2>Grok</h2>
+
+    <span class="tag">Real-time AI</span>
+
+    <p>
+        AI assistant from xAI with a strong focus
+        on current information and social context.
+    </p>
+
+    <a href="https://grok.com/" target="_blank">
+        Open Grok →
+    </a>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="card" data-category="coding chat" data-name="DeepSeek">
+
+    <div class="number">07</div>
+
+    <div class="icon">🐋</div>
+
+    <h2>DeepSeek</h2>
+
+    <span class="tag">Reasoning • Coding</span>
+
+    <p>
+        AI platform known for reasoning, mathematics
+        and programming capabilities.
+    </p>
+
+    <a href="https://chat.deepseek.com/" target="_blank">
+        Open DeepSeek →
+    </a>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="card" data-category="chat" data-name="Meta AI">
+
+    <div class="number">08</div>
+
+    <div class="icon">∞</div>
+
+    <h2>Meta AI</h2>
+
+    <span class="tag">Social AI</span>
+
+    <p>
+        Meta's AI assistant integrated into its
+        consumer ecosystem.
+    </p>
+
+    <a href="https://www.meta.ai/" target="_blank">
+        Open Meta AI →
+    </a>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="card" data-category="chat coding" data-name="Mistral Le Chat">
+
+    <div class="number">09</div>
+
+    <div class="icon">🌊</div>
+
+    <h2>Mistral Le Chat</h2>
+
+    <span class="tag">General AI</span>
+
+    <p>
+        General AI assistant from Mistral AI
+        for conversation, reasoning and coding.
+    </p>
+
+    <a href="https://chat.mistral.ai/" target="_blank">
+        Open Le Chat →
+    </a>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="card" data-category="research productivity" data-name="NotebookLM">
+
+    <div class="number">10</div>
+
+    <div class="icon">📚</div>
+
+    <h2>NotebookLM</h2>
+
+    <span class="tag">Documents • Research</span>
+
+    <p>
+        AI research assistant designed around
+        your own documents and sources.
+    </p>
+
+    <a href="https://notebooklm.google.com/" target="_blank">
+        Open NotebookLM →
+    </a>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="card" data-category="chat" data-name="Poe">
+
+    <div class="number">11</div>
+
+    <div class="icon">🎭</div>
+
+    <h2>Poe</h2>
+
+    <span class="tag">Multiple AI Models</span>
+
+    <p>
+        Platform providing access to multiple
+        AI models and bots in one place.
+    </p>
+
+    <a href="https://poe.com/" target="_blank">
+        Open Poe →
+    </a>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="card" data-category="chat" data-name="Character AI">
+
+    <div class="number">12</div>
+
+    <div class="icon">🎭</div>
+
+    <h2>Character.AI</h2>
+
+    <span class="tag">AI Characters</span>
+
+    <p>
+        Create and interact with conversational
+        AI characters.
+    </p>
+
+    <a href="https://character.ai/" target="_blank">
+        Open Character.AI →
+    </a>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="card" data-category="image" data-name="Midjourney">
+
+    <div class="number">13</div>
+
+    <div class="icon">🎨</div>
+
+    <h2>Midjourney</h2>
+
+    <span class="tag">Image Generation</span>
+
+    <p>
+        Generative AI platform focused on
+        artistic and creative image generation.
+    </p>
+
+    <a href="https://www.midjourney.com/" target="_blank">
+        Open Midjourney →
+    </a>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="card" data-category="image" data-name="Adobe Firefly">
+
+    <div class="number">14</div>
+
+    <div class="icon">🔥</div>
+
+    <h2>Adobe Firefly</h2>
+
+    <span class="tag">Creative AI</span>
+
+    <p>
+        AI tools for image generation,
+        editing and creative workflows.
+    </p>
+
+    <a href="https://firefly.adobe.com/" target="_blank">
+        Open Firefly →
+    </a>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="card" data-category="image productivity" data-name="Canva AI">
+
+    <div class="number">15</div>
+
+    <div class="icon">🖌️</div>
+
+    <h2>Canva AI</h2>
+
+    <span class="tag">Design</span>
+
+    <p>
+        AI-assisted graphic design, presentations,
+        social media and visual content creation.
+    </p>
+
+    <a href="https://www.canva.com/" target="_blank">
+        Open Canva →
+    </a>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="card" data-category="video" data-name="Runway">
+
+    <div class="number">16</div>
+
+    <div class="icon">🎬</div>
+
+    <h2>Runway</h2>
+
+    <span class="tag">AI Video</span>
+
+    <p>
+        Generative AI platform for video creation,
+        editing and visual effects.
+    </p>
+
+    <a href="https://runwayml.com/" target="_blank">
+        Open Runway →
+    </a>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="card" data-category="voice" data-name="ElevenLabs">
+
+    <div class="number">17</div>
+
+    <div class="icon">🎙️</div>
+
+    <h2>ElevenLabs</h2>
+
+    <span class="tag">AI Voice</span>
+
+    <p>
+        AI voice generation, narration,
+        speech synthesis and audio tools.
+    </p>
+
+    <a href="https://elevenlabs.io/" target="_blank">
+        Open ElevenLabs →
+    </a>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="card" data-category="music" data-name="Suno">
+
+    <div class="number">18</div>
+
+    <div class="icon">🎵</div>
+
+    <h2>Suno</h2>
+
+    <span class="tag">AI Music</span>
+
+    <p>
+        Generate songs and music from natural-language
+        descriptions.
+    </p>
+
+    <a href="https://suno.com/" target="_blank">
+        Open Suno →
+    </a>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="card" data-category="productivity" data-name="Gamma">
+
+    <div class="number">19</div>
+
+    <div class="icon">📊</div>
+
+    <h2>Gamma</h2>
+
+    <span class="tag">Presentations</span>
+
+    <p>
+        AI-assisted presentations, documents
+        and visual web pages.
+    </p>
+
+    <a href="https://gamma.app/" target="_blank">
+        Open Gamma →
+    </a>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="card" data-category="coding" data-name="Cursor">
+
+    <div class="number">20</div>
+
+    <div class="icon">💻</div>
+
+    <h2>Cursor</h2>
+
+    <span class="tag">AI Coding</span>
+
+    <p>
+        AI-powered code editor designed to help
+        developers write, understand and modify code.
+    </p>
+
+    <a href="https://cursor.com/" target="_blank">
+        Open Cursor →
+    </a>
+
+</div>
+
+
+</div>
+</main>
+
+
+<footer>
+
+    <strong>AI PORTAL</strong>
+
+    <br><br>
+
+    Top 20 AI Tools · Updated 2026
+
+    <br>
+
+    This is a convenience directory.
+    Availability, pricing and features may change.
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchAI() {
+
+    const input =
+        document.getElementById("searchBox")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (
+            name.includes(input) ||
+            text.includes(input)
+        ) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+function filterAI(category) {
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        if (category === "all") {
+
+            card.style.display = "flex";
+
+        } else {
+
+            const categories =
+                card.dataset.category.split(" ");
+
+            if (categories.includes(category)) {
+
+                card.style.display = "flex";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        }
+
+    });
+
+    document.getElementById("searchBox").value = "";
+
+}
+
+</script>
+
+</body>
+</html>
+```
