@@ -177,18 +177,15 @@ footer {
 </style>
 </head>
 <body>
-
 <header>
     <div class="logo">🔥✍️</div>
     <h1>🔥 寫作 AI & 內容工具</h1>
     <p class="subtitle">醫學教學・簡報・語音・圖表生成・論文輔助工具專區 🔥</p>
     <a href="../../index.html" class="back-btn">🔥 返回主入口</a>
-
     <div class="search-area">
         <input id="search" class="search-box" type="search" placeholder="🔍 搜尋寫作 AI 工具..." autocomplete="off" onkeyup="filterCards()">
     </div>
 </header>
-
 <main>
 <section class="section">
     <h2 class="section-title">🔥✍️ 寫作 AI & 創作輔助 <span>醫學簡報・語音・研究工具</span></h2>
@@ -200,7 +197,6 @@ footer {
             <p>醫學講座長片丟進去，鑑別診斷、治療指引、用藥原則自動剪成短影音。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- Perplexity -->
         <a class="card featured" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -208,7 +204,6 @@ footer {
             <p>查臨床問題最新指引，秒給你實證等級加來源。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- NotebookLM -->
         <a class="card" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -216,7 +211,6 @@ footer {
             <p>丟二十篇論文進來，生 Podcast 進修用聽的。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- Gamma -->
         <a class="card" href="https://gamma.app/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -224,7 +218,6 @@ footer {
             <p>病例報告簡報一句話生成。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- Napkin AI -->
         <a class="card" href="https://www.napkin.ai/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -232,7 +225,6 @@ footer {
             <p>檢驗數據 3 秒變圖表。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- Claude -->
         <a class="card" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -240,7 +232,6 @@ footer {
             <p>看不懂的論文用白話解釋。</p>
             <div class="arrow">↗</div>
         </a>
-
         <!-- ElevenLabs -->
         <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer">
             <div class="icon">🔥</div>
@@ -250,13 +241,52 @@ footer {
         </a>
     </div>
 </section>
-</main>
 
+<section class="section">
+    <h2 class="section-title">📂 AITopic 專區文件 <span>指令庫・工具總覽・使用指南</span></h2>
+    <div class="grid">
+        <!-- 50_AI_Commands -->
+        <a class="card" href="../../AITopic/50_AI_Commands.html">
+            <div class="icon">📋</div>
+            <h3>50 個 AI 指令大全</h3>
+            <p>精選 50 個好用 AI Prompt 指令，臨床寫作、簡報、整理資料隨查隨用。</p>
+            <div class="arrow">↗</div>
+        </a>
+        <!-- AITool -->
+        <a class="card" href="../../AITopic/AITool.html">
+            <div class="icon">🧰</div>
+            <h3>AI 工具總覽</h3>
+            <p>常用 AI 工具一覽表，依用途快速找到適合的工具。</p>
+            <div class="arrow">↗</div>
+        </a>
+        <!-- AIUseGuide -->
+        <a class="card" href="../../AITopic/AIUseGuide.html">
+            <div class="icon">📘</div>
+            <h3>AI 使用指南</h3>
+            <p>從零開始上手 AI 工具的操作說明與使用技巧。</p>
+            <div class="arrow">↗</div>
+        </a>
+        <!-- GuideToWriting -->
+        <a class="card" href="../../AITopic/GuideToWriting.html">
+            <div class="icon">✍️</div>
+            <h3>寫作教學指南</h3>
+            <p>結合 AI 的寫作方法與技巧，提升文章與病例報告品質。</p>
+            <div class="arrow">↗</div>
+        </a>
+        <!-- WritingAI -->
+        <a class="card" href="../../AITopic/WritingAI.html">
+            <div class="icon">🖋️</div>
+            <h3>寫作 AI 精選</h3>
+            <p>專為寫作打造的 AI 工具精選整理。</p>
+            <div class="arrow">↗</div>
+        </a>
+    </div>
+</section>
+</main>
 <footer>
     <strong>🔥 吉米醫師－台達電駐診常用網站 🔥</strong><br>
     © 2026 Jimmy Doctor
 </footer>
-
 <script>
 function filterCards() {
     const input = document.getElementById("search").value.trim().toLowerCase();
