@@ -3,12 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>吉米醫師－台達電駐診常用網站</title>
-   <hardcore>Web On Drdeltachen@gmail Github</hardcore>
+<title>寫作 AI 工具專區 - 吉米醫師</title>
 <style>
-/* =========================================================
-   基本設定
-========================================================= */
 * {
     box-sizing: border-box;
 }
@@ -17,30 +13,13 @@ html {
 }
 body {
     margin: 0;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "Noto Sans TC",
-        "Microsoft JhengHei",
-        Arial,
-        sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
     color: #172033;
     min-height: 100vh;
-    background:
-        linear-gradient(
-            135deg,
-            #eef2ff 0%,
-            #f8fafc 45%,
-            #e0f2fe 100%
-        );
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 45%, #e0f2fe 100%);
 }
-/* =========================================================
-   Header
-========================================================= */
 header {
-    padding:
-        42px 20px 30px;
+    padding: 42px 20px 30px;
     text-align: center;
 }
 .logo {
@@ -51,1013 +30,238 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background:
-        linear-gradient(
-            135deg,
-            #111827,
-            #2563eb
-        );
+    background: linear-gradient(135deg, #111827, #2563eb);
     color: white;
     font-size: 38px;
     font-weight: 800;
-    box-shadow:
-        0 15px 35px
-        rgba(37,99,235,.25);
+    box-shadow: 0 15px 35px rgba(37,99,235,.25);
 }
 h1 {
-    margin:
-        18px 0 8px;
-    font-size:
-        32px;
-    letter-spacing:
-        -0.8px;
+    margin: 18px 0 8px;
+    font-size: 32px;
+    letter-spacing: -0.8px;
 }
 .subtitle {
-    max-width:
-        820px;
-    margin:
-        0 auto;
-    color:
-        #64748b;
-    font-size:
-        15px;
-    line-height:
-        1.8;
+    max-width: 820px;
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
 }
-.status {
-    display:
-        inline-flex;
-    align-items:
-        center;
-    gap:
-        7px;
-    margin-top:
-        12px;
-    padding:
-        7px 14px;
-    border-radius:
-        999px;
-    background:
-        rgba(255,255,255,.8);
-    color:
-        #475569;
-    font-size:
-        12px;
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(37,99,235,.3);
+    transition: background .18s ease;
 }
-.dot {
-    width:
-        8px;
-    height:
-        8px;
-    border-radius:
-        50%;
-    background:
-        #22c55e;
+.back-btn:hover {
+    background: #1d4ed8;
 }
-/* =========================================================
-   搜尋
-========================================================= */
 .search-area {
-    max-width:
-        720px;
-    margin:
-        25px auto 0;
-    padding:
-        0 20px;
+    max-width: 720px;
+    margin: 25px auto 0;
+    padding: 0 20px;
 }
 .search-box {
-    width:
-        100%;
-    padding:
-        17px 22px;
-    border:
-        1px solid #dbe3ef;
-    border-radius:
-        18px;
-    outline:
-        none;
-    background:
-        rgba(255,255,255,.92);
-    font-size:
-        16px;
-    box-shadow:
-        0 10px 30px
-        rgba(15,23,42,.08);
+    width: 100%;
+    padding: 17px 22px;
+    border: 1px solid #dbe3ef;
+    border-radius: 18px;
+    outline: none;
+    background: rgba(255,255,255,.92);
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(15,23,42,.08);
 }
 .search-box:focus {
-    border-color:
-        #3b82f6;
-    box-shadow:
-        0 0 0 4px
-        rgba(59,130,246,.12);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59,130,246,.12);
 }
-/* =========================================================
-   主內容
-========================================================= */
 main {
-    width:
-        min(1200px,94%);
-    margin:
-        0 auto 50px;
+    width: min(1200px,94%);
+    margin: 0 auto 50px;
 }
 .section {
-    margin-top:
-        30px;
+    margin-top: 30px;
 }
 .section-title {
-    display:
-        flex;
-    align-items:
-        center;
-    gap:
-        10px;
-    margin:
-        0 0 15px;
-    font-size:
-        20px;
-    font-weight:
-        750;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 15px;
+    font-size: 20px;
+    font-weight: 750;
 }
 .section-title span {
-    color:
-        #64748b;
-    font-size:
-        13px;
-    font-weight:
-        500;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
 }
-/* =========================================================
-   卡片排列
-========================================================= */
 .grid {
-    display:
-        grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px,1fr)
-        );
-    gap:
-        16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 16px;
 }
-/* =========================================================
-   卡片
-========================================================= */
 .card {
-    position:
-        relative;
-    display:
-        block;
-    padding:
-        22px;
-    min-height:
-        175px;
-    border-radius:
-        20px;
-    text-decoration:
-        none;
-    color:
-        inherit;
-    background:
-        rgba(255,255,255,.91);
-    border:
-        1px solid
-        rgba(255,255,255,.8);
-    box-shadow:
-        0 10px 30px
-        rgba(15,23,42,.07);
-    transition:
-        transform .18s ease,
-        box-shadow .18s ease,
-        border-color .18s ease;
+    position: relative;
+    display: block;
+    padding: 22px;
+    min-height: 175px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255,255,255,.91);
+    border: 1px solid rgba(255,255,255,.8);
+    box-shadow: 0 10px 30px rgba(15,23,42,.07);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .card:hover {
-    transform:
-        translateY(-5px);
-    border-color:
-        #93c5fd;
-    box-shadow:
-        0 18px 40px
-        rgba(15,23,42,.14);
-}
-.card:active {
-    transform:
-        translateY(-2px);
+    transform: translateY(-5px);
+    border-color: #93c5fd;
+    box-shadow: 0 18px 40px rgba(15,23,42,.14);
 }
 .featured {
-    border:
-        2px solid #bfdbfe;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(239,246,255,.97),
-            rgba(255,255,255,.97)
-        );
+    border: 2px solid #bfdbfe;
+    background: linear-gradient(135deg, rgba(239,246,255,.97), rgba(255,255,255,.97));
 }
 .icon {
-    width:
-        48px;
-    height:
-        48px;
-    border-radius:
-        14px;
-    display:
-        flex;
-    align-items:
-        center;
-    justify-content:
-        center;
-    margin-bottom:
-        15px;
-    background:
-        #eff6ff;
-    font-size:
-        22px;
-    font-weight:
-        800;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: #eff6ff;
+    font-size: 22px;
+    font-weight: 800;
 }
 .card h3 {
-    margin:
-        0 0 7px;
-    padding-right:
-        25px;
-    font-size:
-        18px;
+    margin: 0 0 7px;
+    padding-right: 25px;
+    font-size: 18px;
 }
 .card p {
-    margin:
-        0;
-    color:
-        #64748b;
-    font-size:
-        13px;
-    line-height:
-        1.65;
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.65;
 }
 .arrow {
-    position:
-        absolute;
-    right:
-        18px;
-    bottom:
-        18px;
-    color:
-        #94a3b8;
-    font-size:
-        18px;
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    color: #94a3b8;
+    font-size: 18px;
 }
-/* =========================================================
-   Footer
-========================================================= */
 footer {
-    text-align:
-        center;
-    padding:
-        28px;
-    color:
-        #64748b;
-    font-size:
-        13px;
-    line-height:
-        1.8;
+    text-align: center;
+    padding: 28px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.8;
 }
-/* =========================================================
-   手機版
-========================================================= */
 @media(max-width:600px) {
-    header {
-        padding-top:
-            28px;
-    }
-    h1 {
-        font-size:
-            26px;
-    }
-    .grid {
-        grid-template-columns:
-            1fr;
-    }
-    .section-title {
-        flex-direction:
-            column;
-        align-items:
-            flex-start;
-        gap:
-            3px;
-    }
+    header { padding-top: 28px; }
+    h1 { font-size: 26px; }
+    .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<!-- =========================================================
-     Header
-========================================================= -->
 <header>
-    <div class="logo">
-        Δ
-    </div>
-    <h1>
-        吉米醫師－台達電駐診常用網站
-    </h1>
-    <p class="subtitle">
-        AI 人工智慧・醫療雲端・工作與生產力工具・
-        內容創作・影音學習・Portable Browser
-        <br>
-        一站式快速入口
-    </p>
-    <div class="status">
-        <span class="dot"></span>
-        吉米醫師工作入口網站
-    </div>
-    <!-- =====================================================
-         搜尋框
-    ====================================================== -->
+    <div class="logo">🔥✍️</div>
+    <h1>🔥 寫作 AI & 內容工具</h1>
+    <p class="subtitle">醫學教學・簡報・語音・圖表生成・論文輔助工具專區 🔥</p>
+    <a href="../../index.html" class="back-btn">🔥 返回主入口</a>
     <div class="search-area">
-        <input
-            id="search"
-            class="search-box"
-            type="search"
-            placeholder="🔍 搜尋網站、工具或服務..."
-            autocomplete="off"
-            onkeyup="filterCards()"
-        >
+        <input id="search" class="search-box" type="search" placeholder="🔍 搜尋寫作 AI 工具..." autocomplete="off" onkeyup="filterCards()">
     </div>
 </header>
 <main>
-<!-- =========================================================
-     01 AI 人工智慧
-========================================================= -->
 <section class="section">
-    <h2 class="section-title">
-        🤖 AI 人工智慧
-        <span>
-            對話・研究・推理・創作
-        </span>
-    </h2>
+    <h2 class="section-title">🔥✍️ 寫作 AI & 創作輔助 <span>醫學簡報・語音・研究工具</span></h2>
     <div class="grid">
-        <!-- ChatGPT -->
-        <a
-            class="card featured"
-            href="https://chatgpt.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                ◎
-            </div>
-            <h3>
-                ChatGPT
-            </h3>
-            <p>
-                AI 人工智慧助理。
-                適合寫作、研究、分析、
-                程式設計與內容創作。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <!-- 50 AI Commands (local) -->
+        <a class="card featured" href="AITopic/50_AI_Commands.html">
+            <div class="icon">📋</div>
+            <h3>🔥 50 個 AI 萬用指令大全</h3>
+            <p>寫作、格式、學習、創意、分析、深度思考等 50 個跨平台萬用指令，適用 Claude・ChatGPT・Gemini。</p>
+            <div class="arrow">→</div>
         </a>
-        <!-- Claude -->
-        <a
-            class="card"
-            href="https://claude.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                C
-            </div>
-            <h3>
-                Claude AI
-            </h3>
-            <p>
-                Anthropic AI 助理。
-                適合長文、推理、
-                研究與文件處理。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <!-- Fomofly -->
+        <a class="card featured" href="https://fomofly.com/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 Fomofly</h3>
+            <p>醫學講座長片丟進去，鑑別診斷、治療指引、用藥原則自動剪成短影音。</p>
+            <div class="arrow">↗</div>
         </a>
-        <!-- Grok -->
-        <a
-            class="card"
-            href="https://grok.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                𝕏
-            </div>
-            <h3>
-                Grok
-            </h3>
-            <p>
-                xAI 人工智慧助理。
-                適合即時資訊、
-                推理與內容創作。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- Gemini -->
-        <a
-            class="card"
-            href="https://gemini.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                ✦
-            </div>
-            <h3>
-                Gemini
-            </h3>
-            <p>
-                Google AI 助理。
-                適合問答、研究、
-                規劃與學習。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <!-- Perplexity -->
+        <a class="card featured" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 Perplexity</h3>
+            <p>查臨床問題最新指引，秒給你實證等級加來源。</p>
+            <div class="arrow">↗</div>
         </a>
         <!-- NotebookLM -->
-        <a
-            class="card"
-            href="https://notebooklm.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                ▤
-            </div>
-            <h3>
-                NotebookLM
-            </h3>
-            <p>
-                AI 研究與筆記工具。
-                可利用自己的文件與資料進行研究。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <a class="card" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 NotebookLM</h3>
+            <p>丟二十篇論文進來，生 Podcast 進修用聽的。</p>
+            <div class="arrow">↗</div>
         </a>
-        <!-- AI Portal -->
-        <a
-            class="card featured"
-            href="AIPortal.html"
-        >
-            <div class="icon">
-                🗂️
-            </div>
-            <h3>
-                AI Portal
-            </h3>
-            <p>
-                AI 工具入口頁。
-                整合更多 AI 相關網站與服務。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-           <a href="https://github.com/DeltaOnDutyDoctor/DrDeltaChenHomePage/settings/pages" target="_blank" rel="noopener noreferrer" class="card">
-  <div class="icon-wrapper">
-    <!-- SVG Icon or Image for GitHub -->
-    <svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-    </svg>
-  </div>
-  <div class="card-title">GitHub Pages</div>
-  <div class="card-description">
-    專案網站設定與發布管理。設定自訂網域、分支與 Pages 部署狀態。
-  </div>
-  <div class="external-icon">↗</div>
-</a>
+        <!-- Gamma -->
+        <a class="card" href="https://gamma.app/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 Gamma</h3>
+            <p>病例報告簡報一句話生成。</p>
+            <div class="arrow">↗</div>
         </a>
-    </div>
-</section>
-<!-- =========================================================
-     02 醫療・工作・內容
-========================================================= -->
-<section class="section">
-    <h2 class="section-title">
-        🏥 醫療・工作・內容
-        <span>
-            醫院・健康・筆記・Office・部落格
-        </span>
-    </h2>
-    <div class="grid">
-        <!-- CGMH Cloud -->
-        <a
-            class="card featured"
-            href="https://cloud.cgmh.org.tw/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                🏥
-            </div>
-            <h3>
-                長庚雲端
-            </h3>
-            <p>
-                長庚紀念醫院雲端服務入口。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <!-- Napkin AI -->
+        <a class="card" href="https://www.napkin.ai/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 Napkin AI</h3>
+            <p>檢驗數據 3 秒變圖表。</p>
+            <div class="arrow">↗</div>
         </a>
-        <!-- Delta Health -->
-        <a
-            class="card"
-            href="DeltaHealth.html"
-            target="_blank"
-        >
-            <div class="icon">
-                ❤️
-            </div>
-            <h3>
-                Delta Health Page
-            </h3>
-            <p>
-                健康資訊、醫療資源
-                與健康相關工具入口。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
+        <!-- Claude -->
+        <a class="card" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 Claude</h3>
+            <p>看不懂的論文用白話解釋。</p>
+            <div class="arrow">↗</div>
         </a>
-        <!-- Blogger -->
-        <a
-            class="card featured"
-            href="https://www.blogger.com/blog/posts/8498723086197321217"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                B
-            </div>
-            <h3>
-                Blogger
-            </h3>
-            <p>
-                吉米醫師 Blogger
-                文章管理與發布入口。
-                快速查看、編輯與管理部落格文章。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- Evernote -->
-        <a
-            class="card"
-            href="https://evernote.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                E
-            </div>
-            <h3>
-                Evernote
-            </h3>
-            <p>
-                筆記、文件、任務、
-                行事曆與知識管理工具。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- Office -->
-        <a
-            class="card"
-            href="https://www.office.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                ▦
-            </div>
-            <h3>
-                Microsoft 365 / Office
-            </h3>
-            <p>
-                Word、Excel、PowerPoint、
-                Outlook 與 OneDrive。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-    </div>
-</section>
-<!-- =========================================================
-     03 寫作 AI Portal Link
-========================================================= -->
-<section class="section">
-    <h2 class="section-title">
-        ✍️ 寫作 AI
-        <span>
-            醫學教學・簡報・語音・圖表生成專區
-        </span>
-    </h2>
-    <div class="grid">
-        <a
-            class="card featured"
-            href="AITopic/WritingAIPorta.html"
-        >
-            <div class="icon">
-                ✍️
-            </div>
-            <h3>
-                寫作 AI 工具專區
-            </h3>
-            <p>
-                Fomofly、Perplexity、NotebookLM、
-                Gamma、Napkin AI、Claude 與 ElevenLabs 
-                醫學教學、寫作與內容創作 AI 工具整合。
-            </p>
-            <div class="arrow">
-                →
-            </div>
-        </a>
-    </div>
-</section>
-<!-- =========================================================
-     04 影音・社群・學習
-========================================================= -->
-<section class="section">
-    <h2 class="section-title">
-        🎬 影音・社群・學習
-        <span>
-            Facebook・YouTube・Yahoo・股市・新聞與知識
-        </span>
-    </h2>
-    <div class="grid">
-        <!-- Facebook -->
-        <a
-            class="card featured"
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                f
-            </div>
-            <h3>
-                Facebook
-            </h3>
-            <p>
-                社群平台。
-                查看貼文、訊息、社團
-                與粉絲專頁。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- YouTube -->
-        <a
-            class="card featured"
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                ▶
-            </div>
-            <h3>
-                YouTube
-            </h3>
-            <p>
-                影音學習、醫學教育、
-                演講、新聞與知識分享。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- Yahoo! 奇摩 -->
-        <a
-            class="card"
-            href="https://tw.yahoo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                Y!
-            </div>
-            <h3>
-                Yahoo! 奇摩
-            </h3>
-            <p>
-                新聞、氣象、搜尋、
-                生活資訊與綜合入口網站。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-        <!-- Yahoo! 股市 -->
-        <a
-            class="card"
-            href="https://tw.stock.yahoo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <div class="icon">
-                📈
-            </div>
-            <h3>
-                Yahoo! 股市
-            </h3>
-            <p>
-                台股、美股、即時報價、
-                大盤走勢與財經新聞。
-            </p>
-            <div class="arrow">
-                ↗
-            </div>
-        </a>
-    </div>
-</section>
-<!-- =========================================================
-     05 Portable Browser Portal Link
-========================================================= -->
-<section class="section">
-    <h2 class="section-title">
-        🌐 Portable Browser
-        <span>
-            Windows 免安裝可攜式瀏覽器專區
-        </span>
-    </h2>
-    <div class="grid">
-        <a
-            class="card featured"
-            href="BrowserDownload/PortableBrowserDownload.html"
-        >
-            <div class="icon">
-                🌐
-            </div>
-            <h3>
-                Portable Browsers
-            </h3>
-            <p>
-                Brave、Opera、Firefox、Chrome、
-                Ungoogled Chromium、Waterfox 與 Slimjet 
-                免安裝免設定可攜式瀏覽器下載專區。
-            </p>
-            <div class="arrow">
-                →
-            </div>
+        <!-- ElevenLabs -->
+        <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer">
+            <div class="icon">🔥</div>
+            <h3>🔥 ElevenLabs</h3>
+            <p>治療指引變語音，值班空檔聽。</p>
+            <div class="arrow">↗</div>
         </a>
     </div>
 </section>
 </main>
-<!-- =========================================================
-     Footer
-========================================================= -->
 <footer>
-    <strong>
-        吉米醫師－台達電駐診常用網站
-    </strong>
-    <br>
-    AI ・ 醫療 ・ 雲端 ・ 生產力 ・ 內容創作 ・ 影音 ・ 瀏覽器
-    <br>
+    <strong>🔥 吉米醫師－台達電駐診常用網站 🔥</strong><br>
     © 2026 Jimmy Doctor
 </footer>
-<!-- =========================================================
-     搜尋功能
-========================================================= -->
 <script>
 function filterCards() {
-    const input =
-        document
-        .getElementById("search")
-        .value
-        .trim()
-        .toLowerCase();
-    const cards =
-        document
-        .querySelectorAll(".card");
+    const input = document.getElementById("search").value.trim().toLowerCase();
+    const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
-        const text =
-            card.innerText
-            .toLowerCase();
-        if (
-            text.includes(input)
-        ) {
-            card.style.display =
-                "block";
-        }
-        else {
-            card.style.display =
-                "none";
-        }
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "block" : "none";
     });
 }
 </script>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr Delta Chen — Home</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#EEF2F0;
-    --card:#FFFFFF;
-    --ink:#1B2A3A;
-    --ink-soft:#4B5A66;
-    --line:#D7DED9;
-    --teal:#0F6E56;
-    --teal-soft:#E1F5EE;
-    --amber:#854F0B;
-    --amber-soft:#FAEEDA;
-    --amber-line:#EF9F27;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.6;
-  }
-  .wrap{max-width:840px;margin:0 auto;padding:64px 24px 96px;}
-  header{margin-bottom:48px;}
-  .eyebrow{
-    font-size:13px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--teal);
-    font-weight:600;
-    margin-bottom:12px;
-  }
-  h1{
-    font-family:'Newsreader',serif;
-    font-weight:500;
-    font-size:44px;
-    margin:0 0 12px;
-    letter-spacing:-0.01em;
-  }
-  header p{
-    color:var(--ink-soft);
-    font-size:17px;
-    max-width:56ch;
-    margin:0;
-  }
-  .updates{
-    background:var(--amber-soft);
-    border:1px solid var(--amber-line);
-    border-radius:12px;
-    padding:20px 24px;
-    margin:40px 0 56px;
-  }
-  .updates h2{
-    font-family:'Newsreader',serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:19px;
-    margin:0 0 10px;
-    color:var(--amber);
-  }
-  .updates ul{margin:0;padding:0;list-style:none;}
-  .updates li{margin:6px 0;}
-  .updates a{color:var(--amber);font-weight:500;text-decoration:none;border-bottom:1px solid var(--amber-line);}
-  .updates a:hover{border-bottom-color:var(--amber);}
-  .updates .path{color:var(--ink-soft);font-size:13px;margin-left:6px;}
-
-  section.folder{margin-bottom:40px;}
-  .folder-title{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    margin-bottom:16px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--line);
-  }
-  .folder-title h2{
-    font-family:'Newsreader',serif;
-    font-weight:500;
-    font-size:22px;
-    margin:0;
-  }
-  .folder-title span{
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-  .file-list{
-    display:grid;
-    gap:10px;
-  }
-  .file-card{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:14px 18px;
-    text-decoration:none;
-    color:var(--ink);
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .file-card:hover{
-    border-color:var(--teal);
-    transform:translateX(2px);
-  }
-  .file-name{font-weight:500;font-size:15px;}
-  .badge{
-    font-size:11px;
-    font-weight:600;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
-    padding:3px 9px;
-    border-radius:999px;
-    background:var(--teal-soft);
-    color:var(--teal);
-    white-space:nowrap;
-  }
-  .badge.new{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber-line);}
-  footer{
-    margin-top:56px;
-    padding-top:20px;
-    border-top:1px solid var(--line);
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header>
-    <div class="eyebrow">DrDeltaChenHomePage</div>
-    <h1>Dr Delta Chen — Home</h1>
-    <p>A working index of the tools and guides kept in this repository, organized by folder.</p>
-  </header>
-
-  <div class="updates">
-    <h2>Added this morning</h2>
-    <ul>
-      <li><a href="BrowserDownload/PortableBrowserDownload.html">PortableBrowserDownload.html</a><span class="path">BrowserDownload/</span></li>
-      <li><a href="AITopic/WritingAIPorta.html">WritingAIPorta.html</a><span class="path">AITopic/</span></li>
-    </ul>
-  </div>
-
-  <section class="folder">
-    <div class="folder-title">
-      <h2>BrowserDownload</h2>
-      <span>2 files</span>
-    </div>
-    <div class="file-list">
-      <a class="file-card" href="BrowserDownload/Index.html">
-        <span class="file-name">Index.html</span>
-      </a>
-      <a class="file-card" href="BrowserDownload/PortableBrowserDownload.html">
-        <span class="file-name">PortableBrowserDownload.html</span>
-        <span class="badge new">New</span>
-      </a>
-    </div>
-  </section>
-
-  <section class="folder">
-    <div class="folder-title">
-      <h2>AITopic</h2>
-      <span>5 files</span>
-    </div>
-    <div class="file-list">
-      <a class="file-card" href="AITopic/AITool.html">
-        <span class="file-name">AITool.html</span>
-      </a>
-      <a class="file-card" href="AITopic/AIUseGuide.html">
-        <span class="file-name">AIUseGuide.html</span>
-      </a>
-      <a class="file-card" href="AITopic/GuideToWriting.html">
-        <span class="file-name">GuideToWriting.html</span>
-      </a>
-      <a class="file-card" href="AITopic/WritingAI.html">
-        <span class="file-name">WritingAI.html</span>
-      </a>
-      <a class="file-card" href="AITopic/WritingAIPorta.html">
-        <span class="file-name">WritingAIPorta.html</span>
-        <span class="badge new">New</span>
-      </a>
-    </div>
-  </section>
-
-  <footer>Updated automatically to reflect the latest files in each folder.</footer>
-
-</div>
-</body>
-</html>
 </body>
 </html>
