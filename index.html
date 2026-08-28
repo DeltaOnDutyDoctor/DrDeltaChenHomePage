@@ -847,5 +847,203 @@ function filterCards() {
     });
 }
 </script>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr Delta Chen — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF2F0;
+    --card:#FFFFFF;
+    --ink:#1B2A3A;
+    --ink-soft:#4B5A66;
+    --line:#D7DED9;
+    --teal:#0F6E56;
+    --teal-soft:#E1F5EE;
+    --amber:#854F0B;
+    --amber-soft:#FAEEDA;
+    --amber-line:#EF9F27;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:64px 24px 96px;}
+  header{margin-bottom:48px;}
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:600;
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Newsreader',serif;
+    font-weight:500;
+    font-size:44px;
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  header p{
+    color:var(--ink-soft);
+    font-size:17px;
+    max-width:56ch;
+    margin:0;
+  }
+  .updates{
+    background:var(--amber-soft);
+    border:1px solid var(--amber-line);
+    border-radius:12px;
+    padding:20px 24px;
+    margin:40px 0 56px;
+  }
+  .updates h2{
+    font-family:'Newsreader',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:19px;
+    margin:0 0 10px;
+    color:var(--amber);
+  }
+  .updates ul{margin:0;padding:0;list-style:none;}
+  .updates li{margin:6px 0;}
+  .updates a{color:var(--amber);font-weight:500;text-decoration:none;border-bottom:1px solid var(--amber-line);}
+  .updates a:hover{border-bottom-color:var(--amber);}
+  .updates .path{color:var(--ink-soft);font-size:13px;margin-left:6px;}
+
+  section.folder{margin-bottom:40px;}
+  .folder-title{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:16px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .folder-title h2{
+    font-family:'Newsreader',serif;
+    font-weight:500;
+    font-size:22px;
+    margin:0;
+  }
+  .folder-title span{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .file-list{
+    display:grid;
+    gap:10px;
+  }
+  .file-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 18px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .file-card:hover{
+    border-color:var(--teal);
+    transform:translateX(2px);
+  }
+  .file-name{font-weight:500;font-size:15px;}
+  .badge{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:999px;
+    background:var(--teal-soft);
+    color:var(--teal);
+    white-space:nowrap;
+  }
+  .badge.new{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber-line);}
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">DrDeltaChenHomePage</div>
+    <h1>Dr Delta Chen — Home</h1>
+    <p>A working index of the tools and guides kept in this repository, organized by folder.</p>
+  </header>
+
+  <div class="updates">
+    <h2>Added this morning</h2>
+    <ul>
+      <li><a href="BrowserDownload/PortableBrowserDownload.html">PortableBrowserDownload.html</a><span class="path">BrowserDownload/</span></li>
+      <li><a href="AITopic/WritingAIPorta.html">WritingAIPorta.html</a><span class="path">AITopic/</span></li>
+    </ul>
+  </div>
+
+  <section class="folder">
+    <div class="folder-title">
+      <h2>BrowserDownload</h2>
+      <span>2 files</span>
+    </div>
+    <div class="file-list">
+      <a class="file-card" href="BrowserDownload/Index.html">
+        <span class="file-name">Index.html</span>
+      </a>
+      <a class="file-card" href="BrowserDownload/PortableBrowserDownload.html">
+        <span class="file-name">PortableBrowserDownload.html</span>
+        <span class="badge new">New</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="folder">
+    <div class="folder-title">
+      <h2>AITopic</h2>
+      <span>5 files</span>
+    </div>
+    <div class="file-list">
+      <a class="file-card" href="AITopic/AITool.html">
+        <span class="file-name">AITool.html</span>
+      </a>
+      <a class="file-card" href="AITopic/AIUseGuide.html">
+        <span class="file-name">AIUseGuide.html</span>
+      </a>
+      <a class="file-card" href="AITopic/GuideToWriting.html">
+        <span class="file-name">GuideToWriting.html</span>
+      </a>
+      <a class="file-card" href="AITopic/WritingAI.html">
+        <span class="file-name">WritingAI.html</span>
+      </a>
+      <a class="file-card" href="AITopic/WritingAIPorta.html">
+        <span class="file-name">WritingAIPorta.html</span>
+        <span class="badge new">New</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>Updated automatically to reflect the latest files in each folder.</footer>
+
+</div>
+</body>
+</html>
 </body>
 </html>
