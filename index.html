@@ -876,7 +876,7 @@ footer strong { color: var(--ink-soft); }
         </div>
         <div class="ws-field ws-search-row">
             <label for="wsSearch">🔍 搜尋紀錄</label>
-            <input type="text" id="wsSearch" placeholder="搜尋檔案名稱或內容……" oninput="wsDisplayRecords()">
+            <input type="text" id="wsSearch" placeholder="搜尋檔案名稱或內容……">
         </div>
         <div id="wsRecords" class="ws-records"></div>
     </div>
@@ -917,52 +917,92 @@ function copyText(elementId, label) {
     alert("✅ " + label + "已複製：" + value);
 }
 /* ============================================================
-   WebSpace — local storage records
+   WebSpace — Google Sheet (Apps Script Web App) 雲端紀錄
 ============================================================ */
-const WS_STORAGE_KEY = "Jimmy_WebSpace_Records";
-function wsGetRecords() {
-    try {
-        return JSON.parse(localStorage.getItem(WS_STORAGE_KEY) || "[]");
-    } catch (e) {
-        return [];
-    }
+const WS_API_URL = "https://script.google.com/macros/s/AKfycbx-GzQCysu0nQU0V586ihU6q9JuyHnkniND8v5nsNorKQdUOvhHSQNXqxD-rN11lwT-/exec";
+let wsRecordsCache = [];
+let wsLoading = false;
+
+async function wsFetchRecords() {
+    const res = await fetch(WS_API_URL + "?action=list");
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || "讀取失敗");
+    return data.records;
 }
-function wsSaveRecord() {
+async function wsPostAdd(filename, content) {
+    const res = await fetch(WS_API_URL, {
+        method: "POST",
+        body: JSON.stringify({ action: "add", filename, content })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || "新增失敗");
+    return data.record;
+}
+async function wsPostDelete(id) {
+    const res = await fetch(WS_API_URL, {
+        method: "POST",
+        body: JSON.stringify({ action: "delete", id })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.error || "刪除失敗");
+}
+async function wsSaveRecord() {
     const filename = document.getElementById("wsFilename").value.trim();
     const content = document.getElementById("wsContent").value.trim();
     if (!filename) { alert("請輸入檔案名稱！"); return; }
     if (!content) { alert("請輸入內容！"); return; }
-    const records = wsGetRecords();
-    records.unshift({
-        id: Date.now(),
-        filename: filename,
-        content: content,
-        date: new Date().toLocaleString("zh-TW")
-    });
-    localStorage.setItem(WS_STORAGE_KEY, JSON.stringify(records));
-    wsClearForm();
-    wsDisplayRecords();
+    const btn = document.querySelector(".ws-save");
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "💾 儲存中…";
+    try {
+        await wsPostAdd(filename, content);
+        wsClearForm();
+        await wsDisplayRecords();
+    } catch (err) {
+        alert("⚠️ 儲存失敗：" + err.message);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+    }
 }
 function wsClearForm() {
     document.getElementById("wsFilename").value = "";
     document.getElementById("wsContent").value = "";
 }
-function wsDeleteRecord(id) {
+async function wsDeleteRecord(id) {
     if (!confirm("確定要刪除這筆紀錄嗎？")) return;
-    const records = wsGetRecords().filter(r => r.id !== id);
-    localStorage.setItem(WS_STORAGE_KEY, JSON.stringify(records));
-    wsDisplayRecords();
+    try {
+        await wsPostDelete(id);
+        await wsDisplayRecords();
+    } catch (err) {
+        alert("⚠️ 刪除失敗：" + err.message);
+    }
 }
 function wsEscapeHTML(text) {
     const div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
 }
-function wsDisplayRecords() {
+async function wsDisplayRecords() {
+    const container = document.getElementById("wsRecords");
+    if (wsLoading) return;
+    wsLoading = true;
+    container.innerHTML = '<div class="ws-empty">⏳ 讀取中…</div>';
+    try {
+        wsRecordsCache = await wsFetchRecords();
+    } catch (err) {
+        container.innerHTML = '<div class="ws-empty">⚠️ 無法連線至 Google Sheet：' + wsEscapeHTML(err.message) + '</div>';
+        wsLoading = false;
+        return;
+    }
+    wsLoading = false;
+    wsRenderRecords();
+}
+function wsRenderRecords() {
     const container = document.getElementById("wsRecords");
     const search = document.getElementById("wsSearch").value.trim().toLowerCase();
-    const records = wsGetRecords();
-    const filtered = records.filter(r =>
+    const filtered = wsRecordsCache.filter(r =>
         r.filename.toLowerCase().includes(search) ||
         r.content.toLowerCase().includes(search)
     );
@@ -977,12 +1017,13 @@ function wsDisplayRecords() {
                     <div class="ws-filename">📁 ${wsEscapeHTML(r.filename)}</div>
                     <div class="ws-date">${wsEscapeHTML(r.date)}</div>
                 </div>
-                <button type="button" class="ws-delete" onclick="wsDeleteRecord(${r.id})">🗑 刪除</button>
+                <button type="button" class="ws-delete" onclick="wsDeleteRecord('${r.id}')">🗑 刪除</button>
             </div>
             <div class="ws-record-content">${wsEscapeHTML(r.content)}</div>
         </div>
     `).join("");
 }
+document.getElementById("wsSearch").addEventListener("input", wsRenderRecords);
 wsDisplayRecords();
 function filterCards() {
     const input = document.getElementById("search").value.trim().toLowerCase();
