@@ -731,11 +731,11 @@ footer strong { color: var(--ink-soft); }
             </div>
             <div class="login-info">
                 <div class="account-row">
-                    <span>帳號：<strong id="mailAccount">d000011802</strong></span>
+                    <span>帳號：<strong id="mailAccount" data-full="d000011802">d00••••802</strong></span>
                     <button type="button" onclick="copyText('mailAccount','帳號')" title="複製帳號">📋 複製</button>
                 </div>
                 <div class="account-row">
-                    <span>密碼：<strong id="mailPassword">jimmy601@hotmail</strong></span>
+                    <span>密碼：<strong id="mailPassword" data-full="jimmy601@hotmail">jim••••ail</strong></span>
                     <button type="button" onclick="copyText('mailPassword','密碼')" title="複製密碼">📋 複製</button>
                 </div>
                 <a href="https://mail01.cgu.edu.tw" target="_blank" rel="noopener noreferrer" class="emy-btn">
@@ -753,11 +753,11 @@ footer strong { color: var(--ink-soft); }
             </div>
             <div class="login-info">
                 <div class="account-row">
-                    <span>帳號：<strong id="utdAccount">jimmychen9</strong></span>
+                    <span>帳號：<strong id="utdAccount" data-full="jimmychen9">jim••••en9</strong></span>
                     <button type="button" onclick="copyText('utdAccount','帳號')" title="複製帳號">📋 複製</button>
                 </div>
                 <div class="account-row">
-                    <span>密碼：<strong id="utdPassword">Fanny@canada</strong></span>
+                    <span>密碼：<strong id="utdPassword" data-full="Fanny@canada">Fan••••ada</strong></span>
                     <button type="button" onclick="copyText('utdPassword','密碼')" title="複製密碼">📋 複製</button>
                 </div>
                 <a href="https://www.uptodate.com" target="_blank" rel="noopener noreferrer" class="emy-btn">
@@ -965,7 +965,8 @@ function copyEmyPassword() {
 }
 
 function copyText(elementId, label) {
-    const value = document.getElementById(elementId).textContent;
+    const el = document.getElementById(elementId);
+    const value = el.dataset.full || el.textContent;
     navigator.clipboard.writeText(value);
     alert("✅ " + label + "已複製：" + value);
 }
