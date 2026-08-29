@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>吉米醫師－台達電駐診常用網站</title>
+<title>吉米醫師-台達電駐診常用網站</title>
 <style>
 /* =========================================================
    基本設定
@@ -194,13 +194,13 @@ main {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(220px,1fr)
+            minmax(200px,1fr)
         );
     gap:
-        16px;
+        14px;
 }
 /* =========================================================
-   卡片
+   卡片 (縮小版)
 ========================================================= */
 .card {
     position:
@@ -208,11 +208,11 @@ main {
     display:
         block;
     padding:
-        22px;
+        16px 16px 34px;
     min-height:
-        175px;
+        118px;
     border-radius:
-        20px;
+        16px;
     text-decoration:
         none;
     color:
@@ -223,7 +223,7 @@ main {
         1px solid
         rgba(255,255,255,.8);
     box-shadow:
-        0 10px 30px
+        0 8px 22px
         rgba(15,23,42,.07);
     transition:
         transform .18s ease,
@@ -232,11 +232,11 @@ main {
 }
 .card:hover {
     transform:
-        translateY(-5px);
+        translateY(-4px);
     border-color:
         #93c5fd;
     box-shadow:
-        0 18px 40px
+        0 14px 30px
         rgba(15,23,42,.14);
 }
 .card:active {
@@ -253,13 +253,14 @@ main {
             rgba(255,255,255,.97)
         );
 }
-.icon {
+.icon,
+.icon-wrapper {
     width:
-        48px;
+        36px;
     height:
-        48px;
+        36px;
     border-radius:
-        14px;
+        11px;
     display:
         flex;
     align-items:
@@ -267,43 +268,50 @@ main {
     justify-content:
         center;
     margin-bottom:
-        15px;
+        10px;
     background:
         #eff6ff;
     font-size:
-        22px;
+        17px;
     font-weight:
         800;
+    color:
+        #2563eb;
 }
-.card h3 {
+.card h3,
+.card-title {
     margin:
-        0 0 7px;
+        0 0 5px;
     padding-right:
-        25px;
+        20px;
     font-size:
-        18px;
+        15px;
+    font-weight:
+        700;
 }
-.card p {
+.card p,
+.card-description {
     margin:
         0;
     color:
         #64748b;
     font-size:
-        13px;
+        12px;
     line-height:
-        1.65;
+        1.55;
 }
-.arrow {
+.arrow,
+.external-icon {
     position:
         absolute;
     right:
-        18px;
+        14px;
     bottom:
-        18px;
+        12px;
     color:
         #94a3b8;
     font-size:
-        18px;
+        15px;
 }
 /* =========================================================
    Footer
@@ -356,7 +364,7 @@ footer {
         Δ
     </div>
     <h1>
-        吉米醫師－台達電駐診常用網站
+        吉米醫師-台達電駐診常用網站
     </h1>
     <p class="subtitle">
         AI 人工智慧・醫療雲端・工作與生產力工具・
@@ -446,7 +454,7 @@ footer {
             rel="noopener noreferrer"
         >
             <div class="icon">
-                𝕏
+                X
             </div>
             <h3>
                 Grok
@@ -524,53 +532,60 @@ footer {
         </a>
     </div>
 </section>
-   <a href="https://github.com/DeltaOnDutyDoctor/DrDeltaChenHomePage" target="_blank" rel="noopener noreferrer" class="card">
-  <div class="icon-wrapper">
-    <!-- GitHub Icon -->
-    <svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
-    </svg>
-  </div>
-  <div class="card-title">GitHub Repository</div>
-  <div class="card-description">
-    個人主頁專案原始碼與版本控制。查看 Repository 程式碼、Commit 紀錄與開發進度。
-  </div>
-  <div class="external-icon">↗</div>
-</a>
-   <!-- Card 1: 臨床工具集 -->
-<a href="https://cgmherlink-hub.github.io/ClinicalTool/" target="_blank" rel="noopener noreferrer" class="card">
-  <div class="icon-wrapper">
-    <!-- Stethoscope Icon -->
-    <svg height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4.8 2.3A.3.3 0 0 0 4.5 2h-1a.3.3 0 0 0-.3.3V7a5 5 0 0 0 10 0V2.3a.3.3 0 0 0-.3-.3h-1a.3.3 0 0 0-.3.3V7a3 3 0 0 1-6 0V2.3z"/>
-      <path d="M8 12v1a5 5 0 0 0 5 5h1a5 5 0 0 0 5-5v-1"/>
-      <circle cx="19" cy="11" r="2"/>
-    </svg>
-  </div>
-  <div class="card-title">臨床工具集</div>
-  <div class="card-description">
-    急診與臨床醫療輔助工具入口。整合醫學計算機、處置指引與實用臨床資源。
-  </div>
-  <div class="external-icon">↗</div>
-</a>
-
-<!-- Card 2: 廠區報備 -->
-<a href="https://cgmherlink-hub.github.io/ReportData/" target="_blank" rel="noopener noreferrer" class="card">
-  <div class="icon-wrapper">
-    <!-- Clipboard/Report Icon -->
-    <svg height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-      <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-      <path d="M9 12h6"/>
-      <path d="M9 16h6"/>
-    </svg>
-  </div>
-  <div class="card-title">廠區報備</div>
-  <div class="card-description">
-    廠區臨場健康服務與報備資料管理系統。用於紀錄、追蹤與查詢廠區相關業務。
-  </div>
-  <div class="external-icon">↗</div>
-</a>
+<!-- =========================================================
+     開發者與臨場工具
+========================================================= -->
+<section class="section">
+    <h2 class="section-title">
+        🛠️ 開發與臨場工具
+        <span>
+            原始碼・臨床輔助・廠區報備
+        </span>
+    </h2>
+    <div class="grid">
+        <a href="https://github.com/DeltaOnDutyDoctor/DrDeltaChenHomePage" target="_blank" rel="noopener noreferrer" class="card">
+            <div class="icon-wrapper">
+                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+                </svg>
+            </div>
+            <div class="card-title">GitHub Repository</div>
+            <div class="card-description">
+                個人主頁專案原始碼與版本控制。查看 Repository 程式碼、Commit 紀錄與開發進度。
+            </div>
+            <div class="external-icon">↗</div>
+        </a>
+        <a href="https://cgmherlink-hub.github.io/ClinicalTool/" target="_blank" rel="noopener noreferrer" class="card">
+            <div class="icon-wrapper">
+                <svg height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.8 2.3A.3.3 0 0 0 4.5 2h-1a.3.3 0 0 0-.3.3V7a5 5 0 0 0 10 0V2.3a.3.3 0 0 0-.3-.3h-1a.3.3 0 0 0-.3.3V7a3 3 0 0 1-6 0V2.3z"/>
+                    <path d="M8 12v1a5 5 0 0 0 5 5h1a5 5 0 0 0 5-5v-1"/>
+                    <circle cx="19" cy="11" r="2"/>
+                </svg>
+            </div>
+            <div class="card-title">臨床工具集</div>
+            <div class="card-description">
+                急診與臨床醫療輔助工具入口。整合醫學計算機、處置指引與實用臨床資源。
+            </div>
+            <div class="external-icon">↗</div>
+        </a>
+        <a href="https://cgmherlink-hub.github.io/ReportData/" target="_blank" rel="noopener noreferrer" class="card">
+            <div class="icon-wrapper">
+                <svg height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                    <path d="M9 12h6"/>
+                    <path d="M9 16h6"/>
+                </svg>
+            </div>
+            <div class="card-title">廠區報備</div>
+            <div class="card-description">
+                廠區臨場健康服務與報備資料管理系統。用於紀錄、追蹤與查詢廠區相關業務。
+            </div>
+            <div class="external-icon">↗</div>
+        </a>
+    </div>
+</section>
 <!-- =========================================================
      02 醫療・工作・內容
 ========================================================= -->
@@ -878,7 +893,7 @@ footer {
 ========================================================= -->
 <footer>
     <strong>
-        吉米醫師－台達電駐診常用網站
+        吉米醫師-台達電駐診常用網站
     </strong>
     <br>
     AI ・ 醫療 ・ 雲端 ・ 生產力 ・ 內容創作 ・ 影音 ・ 瀏覽器
