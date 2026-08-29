@@ -721,12 +721,28 @@ footer strong { color: var(--ink-soft); }
             <p>長庚紀念醫院雲端服務入口。</p>
             <div class="arrow">↗</div>
         </a>
-        <a class="card" href="https://mail01.cgu.edu.tw" target="_blank" rel="noopener noreferrer">
-            <div class="icon">📧</div>
-            <h3>長庚大學信箱</h3>
-            <p>長庚大學電子郵件系統。點擊開啟 Mail。</p>
-            <div class="arrow">↗</div>
-        </a>
+        <div class="card card-emyway">
+            <div class="card-top">
+                <div class="icon">📧</div>
+                <div>
+                    <h3>長庚大學信箱</h3>
+                    <p>長庚大學電子郵件系統。點擊開啟 Mail。</p>
+                </div>
+            </div>
+            <div class="login-info">
+                <div class="account-row">
+                    <span>帳號：<strong id="mailAccount">d000011802</strong></span>
+                    <button type="button" onclick="copyText('mailAccount','帳號')" title="複製帳號">📋 複製</button>
+                </div>
+                <div class="account-row">
+                    <span>密碼：<strong id="mailPassword">jimmy601@hotmail</strong></span>
+                    <button type="button" onclick="copyText('mailPassword','密碼')" title="複製密碼">📋 複製</button>
+                </div>
+                <a href="https://mail01.cgu.edu.tw" target="_blank" rel="noopener noreferrer" class="emy-btn">
+                    🚀 開啟長庚大學信箱
+                </a>
+            </div>
+        </div>
         <div class="card card-emyway">
             <div class="card-top">
                 <div class="icon">📚</div>
