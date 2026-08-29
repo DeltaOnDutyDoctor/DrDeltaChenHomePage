@@ -727,12 +727,28 @@ footer strong { color: var(--ink-soft); }
             <p>長庚大學電子郵件系統。點擊開啟 Mail。</p>
             <div class="arrow">↗</div>
         </a>
-        <a class="card" href="https://www.uptodate.com" target="_blank" rel="noopener noreferrer">
-            <div class="icon">📚</div>
-            <h3>UpToDate</h3>
-            <p>臨床醫學實證資料庫。點擊開啟 UpToDate。</p>
-            <div class="arrow">↗</div>
-        </a>
+        <div class="card card-emyway">
+            <div class="card-top">
+                <div class="icon">📚</div>
+                <div>
+                    <h3>UpToDate</h3>
+                    <p>臨床醫學實證資料庫。點擊開啟 UpToDate。</p>
+                </div>
+            </div>
+            <div class="login-info">
+                <div class="account-row">
+                    <span>帳號：<strong id="utdAccount">jimmychen9</strong></span>
+                    <button type="button" onclick="copyText('utdAccount','帳號')" title="複製帳號">📋 複製</button>
+                </div>
+                <div class="account-row">
+                    <span>密碼：<strong id="utdPassword">Fanny@canada</strong></span>
+                    <button type="button" onclick="copyText('utdPassword','密碼')" title="複製密碼">📋 複製</button>
+                </div>
+                <a href="https://www.uptodate.com" target="_blank" rel="noopener noreferrer" class="emy-btn">
+                    🚀 開啟 UpToDate
+                </a>
+            </div>
+        </div>
         <div class="card card-emyway">
             <div class="card-top">
                 <div class="icon">📅</div>
@@ -930,6 +946,12 @@ function copyEmyPassword() {
     if (password === "—") { alert("請先輸入醫師代號！"); return; }
     navigator.clipboard.writeText(password);
     alert("✅ 密碼已複製：" + password);
+}
+
+function copyText(elementId, label) {
+    const value = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(value);
+    alert("✅ " + label + "已複製：" + value);
 }
 
 /* ============================================================
