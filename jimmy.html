@@ -300,3 +300,131 @@ renderCards();
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email List with Copy</title>
+  <style>
+    .email-container {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 20px 0;
+    }
+    .email-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .email-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      margin-bottom: 6px;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+    .copy-btn {
+      padding: 4px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      transition: background-color 0.2s;
+    }
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="email-container">
+  <ul class="email-list">
+    <li class="email-item">
+      <span>ji********************</span>
+      <button class="copy-btn" onclick="copyText('ji********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>co***********************</span>
+      <button class="copy-btn" onclick="copyText('co***********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ji*********************</span>
+      <button class="copy-btn" onclick="copyText('ji*********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ji******************</span>
+      <button class="copy-btn" onclick="copyText('ji******************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>d8******************</span>
+      <button class="copy-btn" onclick="copyText('d8******************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>d0*********************</span>
+      <button class="copy-btn" onclick="copyText('d0*********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ji*********************</span>
+      <button class="copy-btn" onclick="copyText('ji*********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>d8************************</span>
+      <button class="copy-btn" onclick="copyText('d8************************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>d8*****************</span>
+      <button class="copy-btn" onclick="copyText('d8*****************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ji*****************</span>
+      <button class="copy-btn" onclick="copyText('ji*****************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>cg*****************</span>
+      <button class="copy-btn" onclick="copyText('cg*****************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>cg*********************</span>
+      <button class="copy-btn" onclick="copyText('cg*********************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ch************************</span>
+      <button class="copy-btn" onclick="copyText('ch************************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ch**************************</span>
+      <button class="copy-btn" onclick="copyText('ch**************************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>ch**************************</span>
+      <button class="copy-btn" onclick="copyText('ch**************************', this)">Copy</button>
+    </li>
+    <li class="email-item">
+      <span>cg*********************</span>
+      <button class="copy-btn" onclick="copyText('cg*********************', this)">Copy</button>
+    </li>
+  </ul>
+</div>
+
+<script>
+  function copyText(text, btnElement) {
+    navigator.clipboard.writeText(text).then(() => {
+      const originalText = btnElement.innerText;
+      btnElement.innerText = 'Copied!';
+      btnElement.style.backgroundColor = '#28a745';
+      
+      setTimeout(() => {
+        btnElement.innerText = originalText;
+        btnElement.style.backgroundColor = '#007bff';
+      }, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>
