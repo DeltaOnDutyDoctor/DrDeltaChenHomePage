@@ -75,7 +75,7 @@ main { max-width: 1180px; margin: 0 auto 60px; padding: 0 20px; box-sizing: bord
 .card-meta { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .account-badge { font-size: 11px; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
 .card-link { font-size: 12px; font-weight: 700; color: var(--brand); text-decoration: none; display: flex; align-items: center; gap: 2px; white-space: nowrap; }
-/* Login-style cards (migrated from B: Hinet / CGU Mail / UpToDate / EmyWay) */
+/* Login-style cards (EmyWay only now) */
 .card.card-wide { grid-column: span 2; }
 @media (max-width: 520px) { .card.card-wide { grid-column: span 1; } }
 .login-info { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); display: grid; gap: 10px; }
@@ -95,7 +95,7 @@ main { max-width: 1180px; margin: 0 auto 60px; padding: 0 20px; box-sizing: bord
     font-weight: 700; font-size: 13.5px;
 }
 .emy-btn:hover { opacity: 0.9; }
-/* WebSpace panel card (migrated from B, embedded as a full-width grid item) */
+/* WebSpace panel card */
 .card.card-workspace { grid-column: 1 / -1; cursor: default; }
 .ws-intro { color: var(--ink-soft); font-size: 13px; line-height: 1.7; margin: 4px 0 16px; }
 .ws-field { margin-bottom: 14px; }
@@ -159,9 +159,11 @@ footer { text-align: center; padding: 25px; color: var(--ink-faint); font-size: 
 const STORAGE_KEY = "tab_cgmh_admin_cards_v1";
 const WS_API_URL = "https://script.google.com/macros/s/AKfycbx-GzQCysu0nQU0V586ihU6q9JuyHnkniND8v5nsNorKQdUOvhHSQNXqxD-rN11lwT-/exec";
 /* ==========================================================
-   Default card set — migrated 1:1 from HTML B (all sections,
-   all cards, all connections/data preserved), now presented
-   inside cgmh-med.html's own framework/branding.
+   Default card set. Login-style cards (Hinet / CGU Mail /
+   UpToDate) no longer store account/password data — they are
+   plain links now. EmyWay stays as-is since it derives its
+   values live from a doctor ID typed in by the user, rather
+   than storing any credential.
 ========================================================== */
 const defaultCards = [
     // -------- 01 AI 人工智慧 --------
@@ -180,24 +182,9 @@ const defaultCards = [
     { id: "med-2", type: "link", title: "長庚學習網", desc: "長庚體系數位學習與課程平台入口。", url: "https://cghadfs.cgmh.org.tw/adfs/oauth2/authorize/?client_id=46a3a7cd-7be5-4dd8-a14d-9a4ae4b94e62&redirect_uri=https%3A%2F%2Fllg.cgmh.org.tw%2Fsignin-oidc&response_type=code&scope=openid%20profile&response_mode=form_post&nonce=639236112924812003.ODU3Njc5NDctODc4MS00MjlkLWI4NDYtYmRhYjg3NjkwODZmOWE5Zjc4NmUtYmI4MC00YzdlLWI0MDQtM2I3ZWI4NzhmODc2&state=CfDJ8CUW_Yyf6C5MmdCwCuuhKQoKV9EHtTCLb2q0rErOXWP464mF6XB6exBGukD6tGJvxSvhPy4KgF1GEArjjxzTx9RMSt7pqo7ZL-65WfcvNA_nSD37Wq_fhSIxQPgWCLDh-GxwRUBLkq5-O2uDQSjo2qar2a_kfE1Kh7DSweRorVaW1MlBHtxAkSx_dVnn3rXSZWaW14seVqfxHoHyFfVRc-f2-aMRohvINsyRFftF6WeU2GiNvxkdz_MNPI60lALw0OS7ra0B5QmfXfO-q4soJPb96HctAqKAqcQJr0AoGVTH&x-client-SKU=ID_NET8_0&x-client-ver=7.1.2.0", icon: "🎓", meta: "醫療" },
     { id: "med-3", type: "link", title: "長庚即時通", desc: "長庚體系內部即時通訊系統入口。", url: "https://cghmesg.cgmh.org.tw/", icon: "💬", meta: "醫療" },
     { id: "med-4", type: "link", title: "Gmail", desc: "Google 電子郵件服務。查看收件匣、寄送郵件與管理信件。", url: "https://mail.google.com/mail/u/0/#inbox", icon: "✉️", meta: "郵件" },
-    {
-        id: "med-5", type: "login", title: "Hinet 信箱", desc: "中華電信 Hinet Webmail。點擊開啟信箱。", icon: "📧", meta: "郵件",
-        url: "https://webmail.hinet.net/", btnLabel: "🚀 開啟 Hinet 信箱",
-        accountLabel: "帳號", accountMasked: "jim••••03", accountFull: "jimmy603",
-        passwordLabel: "密碼", passwordMasked: "coo••••hen", passwordFull: "cooljim.chen"
-    },
-    {
-        id: "med-6", type: "login", title: "長庚大學信箱", desc: "長庚大學電子郵件系統。點擊開啟 Mail。", icon: "📧", meta: "郵件",
-        url: "https://mail01.cgu.edu.tw", btnLabel: "🚀 開啟長庚大學信箱",
-        accountLabel: "帳號", accountMasked: "d00••••802", accountFull: "d000011802",
-        passwordLabel: "密碼", passwordMasked: "jim••••ail", passwordFull: "jimmy601@hotmail"
-    },
-    {
-        id: "med-7", type: "login", title: "UpToDate", desc: "臨床醫學實證資料庫。點擊開啟 UpToDate。", icon: "📚", meta: "醫療",
-        url: "https://www.uptodate.com", btnLabel: "🚀 開啟 UpToDate",
-        accountLabel: "帳號", accountMasked: "jim••••en9", accountFull: "jimmychen9",
-        passwordLabel: "密碼", passwordMasked: "Fan••••ada", passwordFull: "Fanny@canada"
-    },
+    { id: "med-5", type: "link", title: "Hinet 信箱", desc: "中華電信 Hinet Webmail。點擊開啟信箱。", icon: "📧", meta: "郵件", url: "https://webmail.hinet.net/" },
+    { id: "med-6", type: "link", title: "長庚大學信箱", desc: "長庚大學電子郵件系統。點擊開啟 Mail。", icon: "📧", meta: "郵件", url: "https://mail01.cgu.edu.tw" },
+    { id: "med-7", type: "link", title: "UpToDate", desc: "臨床醫學實證資料庫。點擊開啟 UpToDate。", icon: "📚", meta: "醫療", url: "https://www.uptodate.com" },
     { id: "med-8", type: "emy", title: "EmyWay", desc: "醫師行事曆與相關系統，長庚醫師專用。", icon: "📅", meta: "醫療", baseUrl: "https://emyway.jct.org.tw/calendar/#/fc" },
     { id: "med-9", type: "link", title: "Delta Health Page", desc: "健康資訊、醫療資源與健康相關工具入口。", url: "DeltaHealth.html", icon: "❤️", meta: "醫療" },
     { id: "med-10", type: "link", title: "粒粒生技", desc: "粒粒生技官方網站。產品介紹、保健資訊與相關服務入口。", url: "https://sites.google.com/view/vitalgrans/home?authuser=0", icon: "🌾", meta: "醫療" },
@@ -226,19 +213,17 @@ function saveCards() {
 }
 /* ==========================================================
    Rendering — branches by card.type but keeps every card
-   inside A's single draggable #cardGrid container.
+   inside a single draggable #cardGrid container.
 ========================================================== */
 function renderCards() {
     const grid = document.getElementById("cardGrid");
     grid.innerHTML = "";
     cards.forEach((card, index) => {
         const el = document.createElement("div");
-        el.className = "card" + (card.type === "login" || card.type === "emy" ? " card-wide" : "") + (card.type === "workspace" ? " card-workspace" : "");
+        el.className = "card" + (card.type === "emy" ? " card-wide" : "") + (card.type === "workspace" ? " card-workspace" : "");
         el.draggable = true;
         el.dataset.index = index;
-        if (card.type === "login") {
-            el.innerHTML = renderLoginCard(card);
-        } else if (card.type === "emy") {
+        if (card.type === "emy") {
             el.innerHTML = renderEmyCard(card);
         } else if (card.type === "workspace") {
             el.innerHTML = renderWorkspaceCard(card);
@@ -276,30 +261,6 @@ function renderLinkCard(card) {
         </div>
     `;
 }
-function renderLoginCard(card) {
-    return `
-        <div class="card-header">
-            <div class="icon">${card.icon || '🩺'}</div>
-            <div class="card-actions">
-                <button class="action-btn" onclick="editCard('${card.id}')" title="編輯">✏️</button>
-                <button class="action-btn" onclick="deleteCard('${card.id}')" title="刪除">🗑️</button>
-            </div>
-        </div>
-        <h3>${escapeHtml(card.title)}</h3>
-        <p>${escapeHtml(card.desc)}</p>
-        <div class="login-info">
-            <div class="account-row">
-                <span>${escapeHtml(card.accountLabel)}：<strong data-full="${escapeHtml(card.accountFull)}">${escapeHtml(card.accountMasked)}</strong></span>
-                <button type="button" onclick="copyCardField('${card.id}','account')" title="複製帳號">📋 複製</button>
-            </div>
-            <div class="account-row">
-                <span>${escapeHtml(card.passwordLabel)}：<strong data-full="${escapeHtml(card.passwordFull)}">${escapeHtml(card.passwordMasked)}</strong></span>
-                <button type="button" onclick="copyCardField('${card.id}','password')" title="複製密碼">📋 複製</button>
-            </div>
-            <a href="${escapeHtml(card.url)}" target="_blank" rel="noopener noreferrer" class="emy-btn">${escapeHtml(card.btnLabel)}</a>
-        </div>
-    `;
-}
 function renderEmyCard(card) {
     return `
         <div class="card-header">
@@ -312,18 +273,6 @@ function renderEmyCard(card) {
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.desc)}</p>
         <div class="login-info">
-            <div>
-                <label for="doctorID-${card.id}">👨‍⚕️ 醫師代號</label>
-                <input type="text" id="doctorID-${card.id}" placeholder="例如：MA0001" oninput="updateEmyWay('${card.id}')">
-            </div>
-            <div class="account-row">
-                <span>帳號：<strong id="emyAccount-${card.id}">—</strong></span>
-                <button type="button" onclick="copyEmyAccount('${card.id}')" title="複製帳號">📋 複製</button>
-            </div>
-            <div class="account-row">
-                <span>密碼：<strong id="emyPassword-${card.id}">—</strong></span>
-                <button type="button" onclick="copyEmyPassword('${card.id}')" title="複製密碼">📋 複製</button>
-            </div>
             <a id="emyLogin-${card.id}" href="${escapeHtml(card.baseUrl)}" target="_blank" rel="noopener noreferrer" class="emy-btn">🚀 開啟 EmyWay</a>
         </div>
     `;
@@ -358,8 +307,8 @@ function renderWorkspaceCard(card) {
     `;
 }
 /* ==========================================================
-   Drag & Drop — unchanged framework from A, applies to
-   every card type (link / login / emy / workspace alike)
+   Drag & Drop — applies to every card type (link / emy /
+   workspace alike)
 ========================================================== */
 let draggedIndex = null;
 function handleDragStart(e) {
@@ -385,7 +334,8 @@ function handleDragEnd() {
     draggedIndex = null;
 }
 /* ==========================================================
-   In-place editing — extended from A to cover every type
+   In-place editing — link and emy cards only (no credential
+   fields to edit anymore)
 ========================================================== */
 function editCard(id) {
     const card = cards.find(c => c.id === id);
@@ -403,26 +353,12 @@ function editCard(id) {
         if (newMeta === null) return;
         card.url = newUrl.trim() || card.url;
         card.meta = newMeta.trim() || card.meta;
-    } else if (card.type === "login") {
-        const newUrl = prompt("修改開啟網址 (URL)：", card.url);
-        if (newUrl !== null) card.url = newUrl.trim() || card.url;
-        const newAccount = prompt("修改帳號：", card.accountFull);
-        if (newAccount !== null && newAccount.trim()) {
-            card.accountFull = newAccount.trim();
-            card.accountMasked = maskValue(card.accountFull);
-        }
-        const newPassword = prompt("修改密碼：", card.passwordFull);
-        if (newPassword !== null && newPassword.trim()) {
-            card.passwordFull = newPassword.trim();
-            card.passwordMasked = maskValue(card.passwordFull);
-        }
+    } else if (card.type === "emy") {
+        const newBaseUrl = prompt("修改開啟網址 (URL)：", card.baseUrl);
+        if (newBaseUrl !== null) card.baseUrl = newBaseUrl.trim() || card.baseUrl;
     }
     saveCards();
     renderCards();
-}
-function maskValue(str) {
-    if (!str || str.length <= 6) return str;
-    return str.slice(0, 3) + "••••" + str.slice(-3);
 }
 function addNewCard() {
     const title = prompt("卡片名稱：", "新醫用連結");
@@ -468,42 +404,7 @@ function escapeHtml(str) {
     return String(str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 /* ==========================================================
-   Login-card copy buttons (Hinet / CGU Mail / UpToDate)
-========================================================== */
-function copyCardField(id, field) {
-    const card = cards.find(c => c.id === id);
-    if (!card) return;
-    const value = field === "account" ? card.accountFull : card.passwordFull;
-    const label = field === "account" ? card.accountLabel : card.passwordLabel;
-    navigator.clipboard.writeText(value);
-    alert("✅ " + label + "已複製：" + value);
-}
-/* ==========================================================
-   EmyWay — 帳號 = 醫師代號，密碼 = 醫師代號轉大寫
-   (kept per-card so multiple EmyWay cards could coexist)
-========================================================== */
-function updateEmyWay(id) {
-    const input = document.getElementById("doctorID-" + id).value.trim();
-    const doctorID = input.toUpperCase();
-    document.getElementById("emyAccount-" + id).textContent = doctorID || "—";
-    document.getElementById("emyPassword-" + id).textContent = doctorID || "—";
-}
-function copyEmyAccount(id) {
-    const account = document.getElementById("emyAccount-" + id).textContent;
-    if (account === "—") { alert("請先輸入醫師代號！"); return; }
-    navigator.clipboard.writeText(account);
-    alert("✅ 帳號已複製：" + account);
-}
-function copyEmyPassword(id) {
-    const password = document.getElementById("emyPassword-" + id).textContent;
-    if (password === "—") { alert("請先輸入醫師代號！"); return; }
-    navigator.clipboard.writeText(password);
-    alert("✅ 密碼已複製：" + password);
-}
-/* ==========================================================
    WebSpace — Google Sheet (Apps Script Web App) 雲端紀錄
-   (identical endpoint/logic to HTML B, now embedded as a
-   card inside A's grid)
 ========================================================== */
 let wsRecordsCache = [];
 let wsLoading = false;
