@@ -3,20 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>吉米醫師-台達電駐診常用網站</title>
+<title>我的醫院行政常用網頁 - 入口網站</title>
 <style>
 :root {
     --bg-1: #eef2ff; --bg-2: #f7f9fc; --bg-3: #e0f2fe;
     --ink: #172033; --ink-soft: #5b6472; --ink-faint: #8b93a1;
     --surface: rgba(255, 255, 255, 0.95); --surface-border: rgba(226, 232, 240, 0.9);
-    --line: #e6eaf1; --brand: #2563eb; --brand-dark: #111827;
+    --line: #e6eaf1; --brand: #0d9488; --brand-dark: #042f2e;
     --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06); --shadow-md: 0 14px 34px rgba(15, 23, 42, 0.10);
     --radius-md: 16px; --radius-lg: 20px;
-    --accent-ai: #2563eb; --accent-tools: #7c3aed; --accent-med: #0d9488;
 }
 * { box-sizing: border-box; }
 body {
-    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
     color: var(--ink); min-height: 100vh;
     background: linear-gradient(150deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
     background-attachment: fixed;
@@ -29,8 +28,8 @@ header { padding: 30px 20px 15px; text-align: center; }
     color: white; font-size: 28px; font-weight: 800; box-shadow: var(--shadow-md);
 }
 h1 { margin: 12px 0 4px; font-size: 26px; font-weight: 800; }
-.subtitle { color: var(--ink-soft); font-size: 13.5px; margin-bottom: 15px; line-height: 1.7; }
-/* Tab Navigation Bar */
+.subtitle { color: var(--ink-soft); font-size: 13.5px; margin-bottom: 15px; }
+/* Navigation */
 .tabs-nav-container { max-width: 1180px; margin: 0 auto 15px; padding: 0 20px; }
 .tabs-nav { display: flex; gap: 8px; overflow-x: auto; border-bottom: 2px solid var(--line); padding-bottom: 6px; }
 .tab-btn {
@@ -40,7 +39,7 @@ h1 { margin: 12px 0 4px; font-size: 26px; font-weight: 800; }
 }
 .tab-btn:hover { background: #fff; color: var(--brand); }
 .tab-btn.active { background: #fff; color: var(--brand); border-color: var(--line); border-bottom: 3px solid var(--brand); }
-/* Controls & Search */
+/* Controls */
 .toolbar { max-width: 1180px; margin: 0 auto 20px; padding: 0 20px; display: flex; gap: 10px; flex-wrap: wrap; }
 .search-box {
     flex: 1; min-width: 240px; padding: 12px 18px; border: 1px solid var(--line); border-radius: 12px;
@@ -52,9 +51,9 @@ h1 { margin: 12px 0 4px; font-size: 26px; font-weight: 800; }
 }
 .btn:hover { opacity: 0.9; }
 .btn-secondary { background: #64748b; }
-main { width: min(1180px, 94%); margin: 0 auto 60px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; min-height: 80px; }
-/* Interactive Cards (link-type, framework of A) */
+main { max-width: 1180px; margin: 0 auto 60px; padding: 0 20px; box-sizing: border-box; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-auto-flow: dense; gap: 16px; min-height: 80px; }
+/* Cards */
 .card {
     position: relative; display: flex; flex-direction: column; padding: 18px;
     border-radius: var(--radius-md); text-decoration: none; color: inherit; background: var(--surface);
@@ -63,34 +62,32 @@ main { width: min(1180px, 94%); margin: 0 auto 60px; }
 }
 .card:active { cursor: grabbing; }
 .card.dragging { opacity: 0.4; transform: scale(0.98); }
-.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; gap: 8px; }
 .icon {
     width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    background: #eff6ff; color: var(--brand); font-size: 16px; font-weight: 800; flex-shrink: 0;
+    background: #ccfbf1; color: var(--brand); font-size: 16px; font-weight: 800; flex-shrink: 0;
 }
-.card-actions { display: flex; gap: 4px; }
-.action-btn {
-    background: none; border: none; cursor: pointer; font-size: 13px; color: var(--ink-faint); padding: 2px 6px; border-radius: 6px;
-}
+.card-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.action-btn { background: none; border: none; cursor: pointer; font-size: 13px; color: var(--ink-faint); padding: 2px 6px; border-radius: 6px; }
 .action-btn:hover { background: #e2e8f0; color: var(--ink); }
-.card h3 { margin: 0 0 6px; font-size: 15px; font-weight: 700; word-break: break-word; }
-.card p { margin: 0; color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; word-break: break-word; }
-.card-meta { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; }
-.account-badge { font-size: 11px; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; color: var(--ink-soft); font-weight: 600; }
-.card-link { font-size: 12px; font-weight: 700; color: var(--brand); text-decoration: none; display: flex; align-items: center; gap: 2px; }
+.card h3 { margin: 0 0 6px; font-size: 15px; font-weight: 700; word-break: break-word; overflow-wrap: anywhere; }
+.card p { margin: 0; color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; word-break: break-word; overflow-wrap: anywhere; }
+.card-meta { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.account-badge { font-size: 11px; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+.card-link { font-size: 12px; font-weight: 700; color: var(--brand); text-decoration: none; display: flex; align-items: center; gap: 2px; white-space: nowrap; }
 /* Login-style cards (EmyWay only now) */
 .card.card-wide { grid-column: span 2; }
-@media (max-width: 640px) { .card.card-wide { grid-column: span 1; } }
+@media (max-width: 520px) { .card.card-wide { grid-column: span 1; } }
 .login-info { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); display: grid; gap: 10px; }
 .login-info label { display: block; font-size: 12px; font-weight: 700; color: var(--ink-soft); margin-bottom: 6px; }
 .login-info input[type="text"] {
     width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
     font-size: 14px; font-family: inherit; outline: none; background: #fff; color: var(--ink);
 }
-.login-info input[type="text"]:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37,99,235,0.14); }
-.account-row { display: flex; justify-content: space-between; align-items: center; background: #f6f8fb; padding: 9px 12px; border-radius: 9px; font-size: 13px; }
-.account-row strong { font-weight: 700; }
-.account-row button { padding: 5px 10px; border: none; border-radius: 7px; cursor: pointer; background: #e9edf3; font-size: 12px; line-height: 1; }
+.login-info input[type="text"]:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(13,148,136,0.14); }
+.account-row { display: flex; justify-content: space-between; align-items: center; background: #f6f8fb; padding: 9px 12px; border-radius: 9px; font-size: 13px; gap: 8px; }
+.account-row strong { font-weight: 700; word-break: break-all; }
+.account-row button { padding: 5px 10px; border: none; border-radius: 7px; cursor: pointer; background: #e9edf3; font-size: 12px; line-height: 1; flex-shrink: 0; }
 .account-row button:hover { background: #dde3ec; }
 .emy-btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-align: center;
@@ -98,7 +95,7 @@ main { width: min(1180px, 94%); margin: 0 auto 60px; }
     font-weight: 700; font-size: 13.5px;
 }
 .emy-btn:hover { opacity: 0.9; }
-/* WebSpace panel card (embedded as a full-width grid item) */
+/* WebSpace panel card */
 .card.card-workspace { grid-column: 1 / -1; cursor: default; }
 .ws-intro { color: var(--ink-soft); font-size: 13px; line-height: 1.7; margin: 4px 0 16px; }
 .ws-field { margin-bottom: 14px; }
@@ -107,7 +104,7 @@ main { width: min(1180px, 94%); margin: 0 auto 60px; }
     width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px;
     font-size: 14px; font-family: inherit; color: var(--ink); outline: none; background: #fff;
 }
-.ws-field input:focus, .ws-field textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37,99,235,0.14); }
+.ws-field input:focus, .ws-field textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(13,148,136,0.14); }
 .ws-field textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
 .ws-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 .ws-buttons button { border: none; border-radius: 10px; padding: 11px 18px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit; }
@@ -119,11 +116,11 @@ main { width: min(1180px, 94%); margin: 0 auto 60px; }
 .ws-records { display: grid; gap: 12px; }
 .ws-record { background: #f8fafc; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
 .ws-record-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
-.ws-filename { font-size: 15px; font-weight: 700; color: var(--ink); }
+.ws-filename { font-size: 15px; font-weight: 700; color: var(--ink); word-break: break-word; }
 .ws-date { font-size: 11.5px; color: var(--ink-faint); margin-top: 2px; }
 .ws-record-content {
     margin-top: 10px; white-space: pre-wrap; line-height: 1.7; font-size: 13px; color: var(--ink-soft);
-    background: #fff; border: 1px solid var(--line); padding: 12px 14px; border-radius: 10px;
+    background: #fff; border: 1px solid var(--line); padding: 12px 14px; border-radius: 10px; overflow-wrap: anywhere;
 }
 .ws-delete { background: #fee2e2; color: #b91c1c; border: none; padding: 7px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
 .ws-delete:hover { background: #fecaca; }
@@ -133,22 +130,22 @@ footer { text-align: center; padding: 25px; color: var(--ink-faint); font-size: 
 </head>
 <body>
 <header>
-    <div class="logo">Δ</div>
-    <h1>吉米醫師-台達電駐診常用網站</h1>
-    <p class="subtitle">AI 人工智慧・醫療雲端・工作與生產力工具・內容創作・影音學習・Portable Browser・可拖曳編輯入口</p>
+    <div class="logo">🩺</div>
+    <h1>我的醫院行政常用網頁</h1>
+    <p class="subtitle">長庚醫療體系・臨床雲端・UpToDate 與醫療資訊整合入口・可拖曳編輯入口</p>
 </header>
 <div class="tabs-nav-container">
     <nav class="tabs-nav">
         <a href="index.html" class="tab-btn">吉米醫師常用網頁</a>
-        <a href="delta.html" class="tab-btn active">台達駐廠常用網頁</a>
+        <a href="delta.html" class="tab-btn">台達駐廠常用網頁</a>
         <a href="cgu.html" class="tab-btn">我的對的學校常用網頁</a>
         <a href="ntsu.html" class="tab-btn">我的好學校常用網頁</a>
         <a href="cgmh-med.html" class="tab-btn">我的醫院醫用常用網頁</a>
-        <a href="cgmh-admin.html" class="tab-btn">我的醫院行政常用網頁</a>
+        <a href="cgmh-admin.html" class="tab-btn active">我的醫院行政常用網頁</a>
     </nav>
 </div>
 <div class="toolbar">
-    <input id="search" class="search-box" type="search" placeholder="🔍 搜尋本頁卡片..." onkeyup="filterCards()">
+    <input id="search" class="search-box" type="search" placeholder="🔍 搜尋醫用卡片..." onkeyup="filterCards()">
     <button class="btn" onclick="addNewCard()">+ 新增卡片</button>
     <button class="btn btn-secondary" onclick="resetDefaultCards()">↺ 還原預設</button>
 </div>
@@ -156,10 +153,10 @@ footer { text-align: center; padding: 25px; color: var(--ink-faint); font-size: 
     <div id="cardGrid" class="grid"></div>
 </main>
 <footer>
-    <strong>吉米醫師-台達電駐診常用網站</strong> • 拖曳卡片即可排序，變更將自動儲存於目前頁面。<br>© 2026 Jimmy Doctor
+    <strong>我的醫院行政常用網頁</strong> • 獨立分頁儲存機制，拖曳卡片即可排序。<br>© 2026 Jimmy Doctor
 </footer>
 <script>
-const STORAGE_KEY = "tab_jimmy_delta_cards_v1";
+const STORAGE_KEY = "tab_cgmh_admin_cards_v1";
 const WS_API_URL = "https://script.google.com/macros/s/AKfycbx-GzQCysu0nQU0V586ihU6q9JuyHnkniND8v5nsNorKQdUOvhHSQNXqxD-rN11lwT-/exec";
 /* ==========================================================
    Default card set. Login-style cards (Hinet / CGU Mail /
@@ -250,7 +247,7 @@ function renderCards() {
 function renderLinkCard(card) {
     return `
         <div class="card-header">
-            <div class="icon">${card.icon || '🔗'}</div>
+            <div class="icon">${card.icon || '🩺'}</div>
             <div class="card-actions">
                 <button class="action-btn" onclick="editCard('${card.id}')" title="編輯">✏️</button>
                 <button class="action-btn" onclick="deleteCard('${card.id}')" title="刪除">🗑️</button>
@@ -259,7 +256,7 @@ function renderLinkCard(card) {
         <h3>${escapeHtml(card.title)}</h3>
         <p>${escapeHtml(card.desc)}</p>
         <div class="card-meta">
-            <span class="account-badge">${escapeHtml(card.meta || '連結')}</span>
+            <span class="account-badge">${escapeHtml(card.meta || '醫療')}</span>
             <a href="${escapeHtml(card.url)}" target="_blank" rel="noopener noreferrer" class="card-link" onclick="event.stopPropagation()">開啟 ↗</a>
         </div>
     `;
@@ -364,20 +361,20 @@ function editCard(id) {
     renderCards();
 }
 function addNewCard() {
-    const title = prompt("卡片名稱：", "新常用連結");
+    const title = prompt("卡片名稱：", "新醫用連結");
     if (!title) return;
     const url = prompt("網址 (URL)：", "https://");
     if (!url) return;
-    const desc = prompt("描述：", "常用功能說明");
-    const meta = prompt("標籤/備註：", "自訂");
+    const desc = prompt("描述：", "");
+    const meta = prompt("標籤：", "醫療");
     const newCard = {
         id: Date.now().toString(),
         type: "link",
         title: title.trim(),
         url: url.trim(),
         desc: desc ? desc.trim() : "",
-        meta: meta ? meta.trim() : "自訂",
-        icon: "📌"
+        meta: meta ? meta.trim() : "醫療",
+        icon: "💊"
     };
     cards.unshift(newCard);
     saveCards();
@@ -390,7 +387,7 @@ function deleteCard(id) {
     renderCards();
 }
 function resetDefaultCards() {
-    if (confirm("確定要恢復預設卡片排列與內容嗎？")) {
+    if (confirm("恢復預設我的醫院醫用卡片嗎？")) {
         cards = JSON.parse(JSON.stringify(defaultCards));
         saveCards();
         renderCards();
