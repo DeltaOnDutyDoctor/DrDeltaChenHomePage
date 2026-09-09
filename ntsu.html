@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>長庚醫院行政常用網頁 - 入口網站</title>
+<title>我的醫院行政常用網頁 - 入口網站</title>
 <style>
 :root {
     --bg-1: #eef2ff; --bg-2: #f7f9fc; --bg-3: #e0f2fe;
@@ -131,17 +131,17 @@ footer { text-align: center; padding: 25px; color: var(--ink-faint); font-size: 
 <body>
 <header>
     <div class="logo">🩺</div>
-    <h1>長庚醫院行政常用網頁</h1>
+    <h1>我的醫院行政常用網頁</h1>
     <p class="subtitle">長庚醫療體系・臨床雲端・UpToDate 與醫療資訊整合入口・可拖曳編輯入口</p>
 </header>
 <div class="tabs-nav-container">
     <nav class="tabs-nav">
         <a href="index.html" class="tab-btn">吉米醫師常用網頁</a>
         <a href="delta.html" class="tab-btn">台達駐廠常用網頁</a>
-        <a href="cgu.html" class="tab-btn">長庚大學常用網頁</a>
-        <a href="ntsu.html" class="tab-btn">體育大學常用網頁</a>
-        <a href="cgmh-med.html" class="tab-btn">長庚醫院醫用常用網頁</a>
-        <a href="cgmh-admin.html" class="tab-btn active">長庚醫院行政常用網頁</a>
+        <a href="cgu.html" class="tab-btn">我的對的學校常用網頁</a>
+        <a href="ntsu.html" class="tab-btn">我的好學校常用網頁</a>
+        <a href="cgmh-med.html" class="tab-btn">我的醫院醫用常用網頁</a>
+        <a href="cgmh-admin.html" class="tab-btn active">我的醫院行政常用網頁</a>
     </nav>
 </div>
 <div class="toolbar">
@@ -153,7 +153,7 @@ footer { text-align: center; padding: 25px; color: var(--ink-faint); font-size: 
     <div id="cardGrid" class="grid"></div>
 </main>
 <footer>
-    <strong>長庚醫院行政常用網頁</strong> • 獨立分頁儲存機制，拖曳卡片即可排序。<br>© 2026 Jimmy Doctor
+    <strong>我的醫院行政常用網頁</strong> • 獨立分頁儲存機制，拖曳卡片即可排序。<br>© 2026 Jimmy Doctor
 </footer>
 <script>
 const STORAGE_KEY = "tab_cgmh_admin_cards_v1";
@@ -183,7 +183,7 @@ const defaultCards = [
     { id: "med-3", type: "link", title: "長庚即時通", desc: "長庚體系內部即時通訊系統入口。", url: "https://cghmesg.cgmh.org.tw/", icon: "💬", meta: "醫療" },
     { id: "med-4", type: "link", title: "Gmail", desc: "Google 電子郵件服務。查看收件匣、寄送郵件與管理信件。", url: "https://mail.google.com/mail/u/0/#inbox", icon: "✉️", meta: "郵件" },
     { id: "med-5", type: "link", title: "Hinet 信箱", desc: "中華電信 Hinet Webmail。點擊開啟信箱。", icon: "📧", meta: "郵件", url: "https://webmail.hinet.net/" },
-    { id: "med-6", type: "link", title: "長庚大學信箱", desc: "長庚大學電子郵件系統。點擊開啟 Mail。", icon: "📧", meta: "郵件", url: "https://mail01.cgu.edu.tw" },
+    { id: "med-6", type: "link", title: "我的對的學校信箱", desc: "我的對的學校電子郵件系統。點擊開啟 Mail。", icon: "📧", meta: "郵件", url: "https://mail01.cgu.edu.tw" },
     { id: "med-7", type: "link", title: "UpToDate", desc: "臨床醫學實證資料庫。點擊開啟 UpToDate。", icon: "📚", meta: "醫療", url: "https://www.uptodate.com" },
     { id: "med-8", type: "emy", title: "EmyWay", desc: "醫師行事曆與相關系統，長庚醫師專用。", icon: "📅", meta: "醫療", baseUrl: "https://emyway.jct.org.tw/calendar/#/fc" },
     { id: "med-9", type: "link", title: "Delta Health Page", desc: "健康資訊、醫療資源與健康相關工具入口。", url: "DeltaHealth.html", icon: "❤️", meta: "醫療" },
@@ -387,7 +387,7 @@ function deleteCard(id) {
     renderCards();
 }
 function resetDefaultCards() {
-    if (confirm("恢復預設長庚醫院醫用卡片嗎？")) {
+    if (confirm("恢復預設我的醫院醫用卡片嗎？")) {
         cards = JSON.parse(JSON.stringify(defaultCards));
         saveCards();
         renderCards();
