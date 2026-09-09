@@ -285,11 +285,11 @@ function renderLoginCard(card) {
         <div class="login-info">
             <div class="account-row">
                 <span>${escapeHtml(card.accountLabel)}：<strong data-full="${escapeHtml(card.accountFull)}">${escapeHtml(card.accountMasked)}</strong></span>
-                <button type="button" onclick="copyCardField('${card.id}','account')" title="複製帳號">📋 複製</button>
+                <button type="button" onclick="copyCardField('${card.id}','account')"
             </div>
             <div class="account-row">
                 <span>${escapeHtml(card.passwordLabel)}：<strong data-full="${escapeHtml(card.passwordFull)}">${escapeHtml(card.passwordMasked)}</strong></span>
-                <button type="button" onclick="copyCardField('${card.id}','password')" title="複製密碼">📋 複製</button>
+                <button type="button" onclick="copyCardField('${card.id}'
             </div>
             <a href="${escapeHtml(card.url)}" target="_blank" rel="noopener noreferrer" class="emy-btn">${escapeHtml(card.btnLabel)}</a>
         </div>
@@ -313,11 +313,11 @@ function renderEmyCard(card) {
             </div>
             <div class="account-row">
                 <span>帳號：<strong id="emyAccount-${card.id}">—</strong></span>
-                <button type="button" onclick="copyEmyAccount('${card.id}')" title="複製帳號">📋 複製</button>
+                <button type="button" onclick="copyEmyAccount('${card.id}')"
             </div>
             <div class="account-row">
                 <span>密碼：<strong id="emyPassword-${card.id}">—</strong></span>
-                <button type="button" onclick="copyEmyPassword('${card.id}')" title="複製密碼">📋 複製</button>
+                <button type="button" onclick="copyEmyPassword('${card.id}')"
             </div>
             <a id="emyLogin-${card.id}" href="${escapeHtml(card.baseUrl)}" target="_blank" rel="noopener noreferrer" class="emy-btn">🚀 開啟 EmyWay</a>
         </div>
